@@ -1,0 +1,91 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Komorebi/Introduction" />
+
+# 木漏れ日 · Komorebi
+
+**Komorebi** — the interplay of light filtering through leaves.
+
+A Japanese-inspired pastel component library. Built on React, Vite, TypeScript, and shadcn/ui with a distinctive Japanese wabi-sabi aesthetic.
+
+---
+
+## Design Identity
+
+### Typography
+
+| Role | Font |
+|------|------|
+| Headings / Display | Shippori Mincho |
+| Body copy | Jost |
+| Code | JetBrains Mono |
+
+### Palette
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', marginTop: '16px', marginBottom: '24px' }}>
+  {[
+    { name: 'Sakura', hex: '#f5c8c8' },
+    { name: 'Matcha', hex: '#c5ddb8' },
+    { name: 'Sora',   hex: '#b8d4e8' },
+    { name: 'Fuji',   hex: '#d0c5e5' },
+    { name: 'Aki',    hex: '#f0d5b0' },
+    { name: 'Kiri',   hex: '#e8e8e4' },
+    { name: 'Shiro',  hex: '#fafaf7' },
+    { name: 'Sumi',   hex: '#2c2c2c' },
+  ].map(({ name, hex }) => (
+    <div key={name} style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' }}>
+      <div style={{ width: '100%', height: '48px', borderRadius: '8px', background: hex, border: '1px solid rgba(0,0,0,0.08)' }} />
+      <span style={{ fontSize: '12px', fontFamily: 'monospace', color: '#666' }}>{name}</span>
+      <span style={{ fontSize: '11px', fontFamily: 'monospace', color: '#999' }}>{hex}</span>
+    </div>
+  ))}
+</div>
+
+---
+
+## Component Categories
+
+| Category | Components |
+|----------|-----------|
+| **Primitives** | Button, Input, Label, Textarea, Select, Checkbox, RadioGroup, Switch, Slider, Toggle, ToggleGroup, Avatar |
+| **Feedback** | Badge, Alert, Progress, Skeleton, Toast |
+| **Overlay** | Dialog, Sheet, Popover, Tooltip, DropdownMenu, ContextMenu, Command |
+| **Layout** | Card, Separator, Tabs, Accordion, ScrollArea |
+| **Navigation** | Breadcrumb, Pagination |
+| **Data** | Table, Calendar |
+| **Typography** | Heading, Text, Code |
+| **Composite** | DatePicker, ConfirmDialog, SearchInput |
+
+---
+
+## Quick Start
+
+```tsx
+import { Button } from '@stiaan/komorebi'
+
+export function App() {
+  return (
+    <Button variant="sakura">
+      Blossom
+    </Button>
+  )
+}
+```
+
+Import the stylesheet once at your app entry:
+
+```tsx
+import '@stiaan/komorebi/styles'
+```
+
+---
+
+## Design Principles
+
+**Wabi-sabi** — embrace subtle imperfection. Rounded but not bubbly. Pastel but not washed out.
+
+**Distilled** — every component does one thing well. No hidden complexity.
+
+**Accessible** — built on Radix UI primitives. Keyboard navigable, ARIA-compliant, focus-visible by default.
+
+**TypeScript-first** — strict mode, `noUncheckedIndexedAccess`, exported prop interfaces, CVA variant types.

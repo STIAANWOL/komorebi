@@ -1,0 +1,5 @@
+/* Komorebi — distributable stylesheet.
+   Bundles fonts, design tokens, base styles, and the component utility classes
+   into a single file consumers import via `@stiaan/komorebi/styles`. */
+@import './fonts.css';
+@import './globals.css';

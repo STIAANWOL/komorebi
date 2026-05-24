@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────────────────
+   DESIGN TOKENS
+   HSL values stored as bare channel tuples (no hsl() wrapper) so Tailwind's
+   opacity modifier syntax — e.g. bg-sakura/50 — works correctly.
+   ───────────────────────────────────────────────────────────────────────── */
+@layer base {
+  :root {
+    /* Komorebi raw palette */
+    --color-sakura: 349 68% 88%;
+    --color-matcha: 101 30% 79%;
+    --color-sora:   205 44% 81%;
+    --color-fuji:   261 28% 83%;
+    --color-aki:    35  71% 81%;
+    --color-sumi:   0   0%  17%;
+    --color-shiro:  60  11% 97%;
+    --color-kiri:   60  4%  90%;
+
+    /* Semantic tokens — light mode */
+    --background:          60  11% 97%;
+    --foreground:          0   0%  17%;
+
+    --card:                0   0%  100%;
+    --card-foreground:     0   0%  17%;
+
+    --popover:             0   0%  100%;
+    --popover-foreground:  0   0%  17%;
+
+    --primary:             261 14% 49%;
+    --primary-foreground:  0   0%  98%;
+
+    --secondary:           261 10% 90%;
+    --secondary-foreground: 0  0%  17%;
+
+    --muted:               60  4%  90%;
+    --muted-foreground:    0   0%  40%;
+
+    --accent:              349 18% 92%;
+    --accent-foreground:   0   0%  17%;
+
+    --destructive:         0   65% 52%;
+    --destructive-foreground: 0 0%  98%;
+
+    --border:              60  4%  85%;
+    --input:               60  4%  55%;
+    --ring:                261 14% 49%;
+
+    --radius:              0.5rem;
+
+    /* Elevation */
+    --shadow-xs: 0 1px 2px 0 hsl(0 0% 0% / 0.04);
+    --shadow-sm: 0 1px 3px 0 hsl(0 0% 0% / 0.06), 0 1px 2px -1px hsl(0 0% 0% / 0.04);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.06), 0 2px 4px -2px hsl(0 0% 0% / 0.04);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.06), 0 4px 6px -4px hsl(0 0% 0% / 0.04);
+
+    /* Motion */
+    --duration-fast:   150ms;
+    --duration-base:   250ms;
+    --duration-slow:   400ms;
+    --ease-komorebi:   cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-gentle:     cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background:          0   0%  11%;
+    --foreground:          60  11% 94%;
+
+    --card:                0   0%  14%;
+    --card-foreground:     60  11% 94%;
+
+    --popover:             0   0%  14%;
+    --popover-foreground:  60  11% 94%;
+
+    --primary:             261 16% 65%;
+    --primary-foreground:  0   0%  17%;
+
+    --secondary:           261 8%  22%;
+    --secondary-foreground: 60 11% 94%;
+
+    --muted:               0   0%  20%;
+    --muted-foreground:    0   0%  63%;
+
+    --accent:              349 12% 22%;
+    --accent-foreground:   60  11% 94%;
+
+    --destructive:         0   55% 50%;
+    --destructive-foreground: 60 11% 94%;
+
+    --border:              0   0%  24%;
+    --input:               0   0%  43%;
+    --ring:                261 16% 65%;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BASE ELEMENT STYLES
+   ───────────────────────────────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Jost', system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Shippori Mincho', Georgia, serif;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  code, pre, kbd, samp {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.875em;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: calc(var(--radius) - 2px);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   CUSTOM UTILITIES
+   ───────────────────────────────────────────────────────────────────────── */
+@layer utilities {
+  .glass {
+    background-color: hsl(var(--background) / 0.7);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--muted-foreground) / 0.12) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.8s infinite linear;
+  }
+
+  .font-serif {
+    font-family: 'Shippori Mincho', Georgia, serif;
+  }
+
+  .font-sans {
+    font-family: 'Jost', system-ui, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   REDUCED MOTION
+   Honour the user's OS-level motion preference (WCAG 2.2.2 / 2.3.3). Halts
+   looping effects like the skeleton shimmer and collapses transitions.
+   ───────────────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
