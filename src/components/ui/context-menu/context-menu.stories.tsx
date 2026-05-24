@@ -9,7 +9,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Right-click (or long-press) the children to open. Pass an `items` array — same shape as DropdownMenu.',
+        component:
+          'Right-click (or long-press) the children to open. Pass an `items` array — same shape as DropdownMenu.',
       },
     },
   },

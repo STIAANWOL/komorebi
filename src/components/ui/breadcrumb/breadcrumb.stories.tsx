@@ -10,7 +10,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A prop-driven breadcrumb. Pass an `items` array; the last item (or one with no `href`) renders as the current page.',
+        component:
+          'A prop-driven breadcrumb. Pass an `items` array; the last item (or one with no `href`) renders as the current page.',
       },
     },
   },
@@ -45,10 +46,6 @@ export const CustomSeparator: Story = {
   name: 'Custom Separator',
   args: {
     separator: <Slash />,
-    items: [
-      { label: 'Home', href: '#' },
-      { label: 'Settings', href: '#' },
-      { label: 'Profile' },
-    ],
+    items: [{ label: 'Home', href: '#' }, { label: 'Settings', href: '#' }, { label: 'Profile' }],
   },
 }

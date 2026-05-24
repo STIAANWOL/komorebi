@@ -10,7 +10,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A prop-driven dropdown select. Pass `options` and a `placeholder`; group options with `{ group, items }`.',
+        component:
+          'A prop-driven dropdown select. Pass `options` and a `placeholder`; group options with `{ group, items }`.',
       },
     },
   },

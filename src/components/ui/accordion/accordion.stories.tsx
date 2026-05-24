@@ -4,7 +4,7 @@ import { Accordion } from './accordion'
 const faqs = [
   {
     q: 'What is Komorebi?',
-    a: 'Komorebi (木漏れ日) is a Japanese word describing the interplay of light and leaves — the dappled sunlight that filters through a forest canopy. It inspired this design system\'s approach to softness and depth.',
+    a: "Komorebi (木漏れ日) is a Japanese word describing the interplay of light and leaves — the dappled sunlight that filters through a forest canopy. It inspired this design system's approach to softness and depth.",
   },
   {
     q: 'Which fonts does the library use?',
@@ -50,5 +50,11 @@ export const MultipleOpen: Story = {
 
 export const DefaultOpen: Story = {
   name: 'Default Open',
-  args: { type: 'single', collapsible: true, defaultValue: 'item-0', items, className: 'w-[480px]' },
+  args: {
+    type: 'single',
+    collapsible: true,
+    defaultValue: 'item-0',
+    items,
+    className: 'w-[480px]',
+  },
 }

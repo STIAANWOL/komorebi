@@ -1,13 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
-import {
-  ArrowRight,
-  Download,
-  Heart,
-  Mail,
-  Plus,
-  Trash2,
-} from 'lucide-react'
+import { ArrowRight, Download, Heart, Mail, Plus, Trash2 } from 'lucide-react'
 import { Button } from './button'
 
 const meta = {
@@ -32,7 +25,18 @@ Built with CVA — import \`buttonVariants\` to apply button styles without the 
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'secondary', 'outline', 'ghost', 'destructive', 'link', 'sakura', 'matcha', 'sora', 'fuji'],
+      options: [
+        'default',
+        'secondary',
+        'outline',
+        'ghost',
+        'destructive',
+        'link',
+        'sakura',
+        'matcha',
+        'sora',
+        'fuji',
+      ],
       description: 'Visual style.',
       table: { defaultValue: { summary: 'default' } },
     },

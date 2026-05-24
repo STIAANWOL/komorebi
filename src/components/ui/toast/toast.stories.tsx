@@ -11,7 +11,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Toast notifications via Sonner. Place `<Toaster />` once at the app root, then call `toast()` from anywhere.',
+        component:
+          'Toast notifications via Sonner. Place `<Toaster />` once at the app root, then call `toast()` from anywhere.',
       },
     },
   },
@@ -29,11 +30,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  render: () => (
-    <Button onClick={() => toast('Your changes have been saved.')}>
-      Show Toast
-    </Button>
-  ),
+  render: () => <Button onClick={() => toast('Your changes have been saved.')}>Show Toast</Button>,
 }
 
 export const Success: Story = {
@@ -99,11 +96,21 @@ export const AllTypes: Story = {
   parameters: { controls: { disable: true } },
   render: () => (
     <div className="flex flex-wrap gap-2">
-      <Button size="sm" onClick={() => toast('Default message')}>Default</Button>
-      <Button size="sm" variant="matcha" onClick={() => toast.success('All done!')}>Success</Button>
-      <Button size="sm" variant="destructive" onClick={() => toast.error('Something broke')}>Error</Button>
-      <Button size="sm" variant="sakura" onClick={() => toast.warning('Watch out')}>Warning</Button>
-      <Button size="sm" variant="sora" onClick={() => toast.info('Good to know')}>Info</Button>
+      <Button size="sm" onClick={() => toast('Default message')}>
+        Default
+      </Button>
+      <Button size="sm" variant="matcha" onClick={() => toast.success('All done!')}>
+        Success
+      </Button>
+      <Button size="sm" variant="destructive" onClick={() => toast.error('Something broke')}>
+        Error
+      </Button>
+      <Button size="sm" variant="sakura" onClick={() => toast.warning('Watch out')}>
+        Warning
+      </Button>
+      <Button size="sm" variant="sora" onClick={() => toast.info('Good to know')}>
+        Info
+      </Button>
     </div>
   ),
 }

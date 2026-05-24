@@ -12,7 +12,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A prop-driven modal. Pass `trigger`, `title`, `description`, and `footer`; the body is `children`.',
+        component:
+          'A prop-driven modal. Pass `trigger`, `title`, `description`, and `footer`; the body is `children`.',
       },
     },
   },
@@ -77,7 +78,10 @@ export const Informational: Story = {
           ['⌘S', 'Save'],
           ['⌘Z', 'Undo'],
         ].map(([key, desc]) => (
-          <div key={key} className="flex items-center justify-between border-b border-border py-1.5 last:border-0">
+          <div
+            key={key}
+            className="flex items-center justify-between border-b border-border py-1.5 last:border-0"
+          >
             <span className="text-muted-foreground">{desc}</span>
             <kbd className="rounded border bg-muted px-1.5 py-0.5 font-mono text-xs">{key}</kbd>
           </div>

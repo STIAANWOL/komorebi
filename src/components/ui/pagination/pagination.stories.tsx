@@ -10,7 +10,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A prop-driven pagination. Pass `page` and `pageCount`; the page sequence and ellipses are computed for you.',
+        component:
+          'A prop-driven pagination. Pass `page` and `pageCount`; the page sequence and ellipses are computed for you.',
       },
     },
   },
@@ -36,7 +37,9 @@ export const Controlled: Story = {
     const pageCount = 8
     return (
       <div className="flex flex-col items-center gap-4">
-        <p className="text-sm text-muted-foreground">Page {page} of {pageCount}</p>
+        <p className="text-sm text-muted-foreground">
+          Page {page} of {pageCount}
+        </p>
         <Pagination page={page} pageCount={pageCount} onPageChange={setPage} />
       </div>
     )

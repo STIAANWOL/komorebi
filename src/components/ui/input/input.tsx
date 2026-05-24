@@ -26,7 +26,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             'transition-colors duration-150',
             'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-0',
             'disabled:cursor-not-allowed disabled:opacity-50',
-            error ? 'border-destructive focus-visible:ring-destructive/50' : 'border-input hover:border-ring/50',
+            error
+              ? 'border-destructive focus-visible:ring-destructive/50'
+              : 'border-input hover:border-ring/50',
             leftIcon && 'pl-9',
             rightIcon && 'pr-9',
             className,

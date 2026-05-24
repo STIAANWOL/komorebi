@@ -9,7 +9,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'All headings use **Shippori Mincho** — an authentic Japanese serif. Levels map to h1–h6 with curated size scales.',
+        component:
+          'All headings use **Shippori Mincho** — an authentic Japanese serif. Levels map to h1–h6 with curated size scales.',
       },
     },
   },

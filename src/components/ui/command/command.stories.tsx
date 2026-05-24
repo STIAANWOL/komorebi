@@ -31,7 +31,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A prop-driven command palette. Pass `groups` of items; add `open`/`onOpenChange` for a ⌘K dialog.',
+        component:
+          'A prop-driven command palette. Pass `groups` of items; add `open`/`onOpenChange` for a ⌘K dialog.',
       },
     },
   },

@@ -14,7 +14,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A prop-driven card. Pass `title`, `description`, and `footer`; the body is `children`.',
+        component:
+          'A prop-driven card. Pass `title`, `description`, and `footer`; the body is `children`.',
       },
     },
   },
@@ -32,7 +33,9 @@ export const Default: Story = {
     footer: (
       <>
         <Button size="sm">Primary action</Button>
-        <Button size="sm" variant="ghost">Cancel</Button>
+        <Button size="sm" variant="ghost">
+          Cancel
+        </Button>
       </>
     ),
   },
@@ -84,7 +87,13 @@ export const PricingCard: Story = {
           <span className="mb-1 text-sm text-muted-foreground">/month</span>
         </div>
         <ul className="flex flex-col gap-2 text-sm">
-          {['Unlimited projects', '25GB storage', 'Priority support', 'Advanced analytics', 'Custom domains'].map((f) => (
+          {[
+            'Unlimited projects',
+            '25GB storage',
+            'Priority support',
+            'Advanced analytics',
+            'Custom domains',
+          ].map((f) => (
             <li key={f} className="flex items-center gap-2">
               <span className="text-matcha">✓</span>
               {f}

@@ -44,7 +44,8 @@ export const InArticle: Story = {
   render: () => (
     <div className="max-w-lg flex flex-col gap-4">
       <Text>
-        The <Code>cn()</Code> utility combines <Code>clsx</Code> with <Code>tailwind-merge</Code>, ensuring conflicting Tailwind utilities resolve correctly:
+        The <Code>cn()</Code> utility combines <Code>clsx</Code> with <Code>tailwind-merge</Code>,
+        ensuring conflicting Tailwind utilities resolve correctly:
       </Text>
       <CodeBlock>
         {`function cn(...inputs: ClassValue[]): string {
@@ -52,7 +53,8 @@ export const InArticle: Story = {
 }`}
       </CodeBlock>
       <Text variant="muted" size="sm">
-        This pattern is used throughout the library to allow consumers to safely override default styles.
+        This pattern is used throughout the library to allow consumers to safely override default
+        styles.
       </Text>
     </div>
   ),

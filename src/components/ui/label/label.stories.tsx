@@ -11,7 +11,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Accessible label powered by Radix UI. Use `htmlFor` to associate with form controls.',
+        component:
+          'Accessible label powered by Radix UI. Use `htmlFor` to associate with form controls.',
       },
     },
   },
@@ -39,7 +40,9 @@ export const WithInput: Story = {
   parameters: { controls: { disable: true } },
   render: () => (
     <div className="flex flex-col gap-1.5">
-      <Label htmlFor="email" required>Email address</Label>
+      <Label htmlFor="email" required>
+        Email address
+      </Label>
       <Input id="email" type="email" placeholder="you@example.com" />
     </div>
   ),

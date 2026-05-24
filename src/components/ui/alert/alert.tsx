@@ -7,14 +7,10 @@ const alertVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          'bg-background border-border text-foreground',
-        info:
-          'bg-sora/20 border-sora/50 text-foreground [&>svg]:text-sora',
-        success:
-          'bg-matcha/20 border-matcha/50 text-foreground [&>svg]:text-matcha',
-        warning:
-          'bg-aki/20 border-aki/50 text-foreground [&>svg]:text-aki',
+        default: 'bg-background border-border text-foreground',
+        info: 'bg-sora/20 border-sora/50 text-foreground [&>svg]:text-sora',
+        success: 'bg-matcha/20 border-matcha/50 text-foreground [&>svg]:text-matcha',
+        warning: 'bg-aki/20 border-aki/50 text-foreground [&>svg]:text-aki',
         destructive:
           'bg-destructive/10 border-destructive/30 text-destructive [&>svg]:text-destructive',
       },
@@ -24,8 +20,7 @@ const alertVariants = cva(
 )
 
 interface AlertRootProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof alertVariants> {}
+  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof alertVariants> {}
 
 const AlertRoot = React.forwardRef<HTMLDivElement, AlertRootProps>(
   ({ className, variant, ...props }, ref) => (
@@ -45,11 +40,12 @@ const AlertTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<H
 )
 AlertTitle.displayName = 'AlertTitle'
 
-const AlertDescription = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLParagraphElement>>(
-  ({ className, ...props }, ref) => (
-    <p ref={ref} className={cn('text-sm leading-relaxed', className)} {...props} />
-  ),
-)
+const AlertDescription = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+  <p ref={ref} className={cn('text-sm leading-relaxed', className)} {...props} />
+))
 AlertDescription.displayName = 'AlertDescription'
 
 export interface AlertProps extends VariantProps<typeof alertVariants> {

@@ -12,7 +12,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A prop-driven side drawer. Pass `trigger`, `title`, `side`, and `footer`; the body is `children`.',
+        component:
+          'A prop-driven side drawer. Pass `trigger`, `title`, `side`, and `footer`; the body is `children`.',
       },
     },
   },
@@ -50,7 +51,10 @@ export const Left: Story = {
     children: (
       <nav className="flex flex-col gap-1 py-6">
         {['Dashboard', 'Projects', 'Team', 'Billing', 'Settings'].map((item) => (
-          <button key={item} className="rounded-md px-3 py-2 text-left text-sm transition-colors hover:bg-accent">
+          <button
+            key={item}
+            className="rounded-md px-3 py-2 text-left text-sm transition-colors hover:bg-accent"
+          >
             {item}
           </button>
         ))}

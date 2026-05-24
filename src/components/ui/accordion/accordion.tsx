@@ -70,20 +70,20 @@ export type AccordionProps = {
   items: AccordionItemData[]
   className?: string
 } & (
-    | {
-        type: 'single'
-        collapsible?: boolean
-        value?: string
-        defaultValue?: string
-        onValueChange?: (value: string) => void
-      }
-    | {
-        type: 'multiple'
-        value?: string[]
-        defaultValue?: string[]
-        onValueChange?: (value: string[]) => void
-      }
-  )
+  | {
+      type: 'single'
+      collapsible?: boolean
+      value?: string
+      defaultValue?: string
+      onValueChange?: (value: string) => void
+    }
+  | {
+      type: 'multiple'
+      value?: string[]
+      defaultValue?: string[]
+      onValueChange?: (value: string[]) => void
+    }
+)
 
 const Accordion = ({ items, className, ...rootProps }: AccordionProps) => (
   <AccordionRoot

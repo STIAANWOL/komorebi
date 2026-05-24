@@ -12,7 +12,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A prop-driven tabset. Pass a `tabs` array of `{ value, label, content }`; the list and panels are rendered for you.',
+        component:
+          'A prop-driven tabset. Pass a `tabs` array of `{ value, label, content }`; the list and panels are rendered for you.',
       },
     },
   },
@@ -69,9 +70,21 @@ export const Simple: Story = {
     className: 'w-80',
     defaultValue: 'all',
     tabs: [
-      { value: 'all', label: 'All', content: <p className="text-sm text-muted-foreground">All 24 items</p> },
-      { value: 'active', label: 'Active', content: <p className="text-sm text-muted-foreground">18 active items</p> },
-      { value: 'archived', label: 'Archived', content: <p className="text-sm text-muted-foreground">6 archived items</p> },
+      {
+        value: 'all',
+        label: 'All',
+        content: <p className="text-sm text-muted-foreground">All 24 items</p>,
+      },
+      {
+        value: 'active',
+        label: 'Active',
+        content: <p className="text-sm text-muted-foreground">18 active items</p>,
+      },
+      {
+        value: 'archived',
+        label: 'Archived',
+        content: <p className="text-sm text-muted-foreground">6 archived items</p>,
+      },
     ],
   },
 }

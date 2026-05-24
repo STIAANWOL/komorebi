@@ -17,48 +17,39 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          'bg-primary text-primary-foreground hover:bg-primary/85 active:scale-95',
-        secondary:
-          'bg-secondary text-secondary-foreground hover:bg-secondary/80 active:scale-95',
+        default: 'bg-primary text-primary-foreground hover:bg-primary/85 active:scale-95',
+        secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80 active:scale-95',
         outline:
           'border-border bg-transparent hover:bg-accent hover:text-accent-foreground active:scale-95',
-        ghost:
-          'text-muted-foreground hover:bg-accent hover:text-accent-foreground active:scale-95',
+        ghost: 'text-muted-foreground hover:bg-accent hover:text-accent-foreground active:scale-95',
         destructive:
           'bg-destructive text-destructive-foreground hover:bg-destructive/85 active:scale-95',
-        link:
-          'text-primary underline underline-offset-4 hover:text-primary/80 p-0 h-auto',
-        sakura:
-          'bg-sakura text-sumi hover:bg-sakura/85 active:scale-95',
-        matcha:
-          'bg-matcha text-sumi hover:bg-matcha/85 active:scale-95',
-        sora:
-          'bg-sora text-sumi hover:bg-sora/85 active:scale-95',
-        fuji:
-          'bg-fuji text-sumi hover:bg-fuji/85 active:scale-95',
+        link: 'text-primary underline underline-offset-4 hover:text-primary/80 p-0 h-auto',
+        sakura: 'bg-sakura text-sumi hover:bg-sakura/85 active:scale-95',
+        matcha: 'bg-matcha text-sumi hover:bg-matcha/85 active:scale-95',
+        sora: 'bg-sora text-sumi hover:bg-sora/85 active:scale-95',
+        fuji: 'bg-fuji text-sumi hover:bg-fuji/85 active:scale-95',
       },
       size: {
-        xs:       'h-7 px-2.5 text-xs',
-        sm:       'h-8 px-3 text-sm',
-        default:  'h-10 px-5 text-sm',
-        lg:       'h-12 px-7 text-base',
-        xl:       'h-14 px-9 text-lg',
-        icon:     'h-10 w-10 p-0',
-        'icon-sm':'h-8 w-8 p-0',
-        'icon-lg':'h-12 w-12 p-0',
+        xs: 'h-7 px-2.5 text-xs',
+        sm: 'h-8 px-3 text-sm',
+        default: 'h-10 px-5 text-sm',
+        lg: 'h-12 px-7 text-base',
+        xl: 'h-14 px-9 text-lg',
+        icon: 'h-10 w-10 p-0',
+        'icon-sm': 'h-8 w-8 p-0',
+        'icon-lg': 'h-12 w-12 p-0',
       },
     },
     defaultVariants: {
       variant: 'default',
-      size:    'default',
+      size: 'default',
     },
   },
 )
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   asChild?: boolean
   loading?: boolean
   leftIcon?: React.ReactNode
@@ -92,11 +83,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         aria-disabled={isDisabled}
         {...props}
       >
-        {loading ? (
-          <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
-        ) : (
-          leftIcon
-        )}
+        {loading ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" /> : leftIcon}
         {children}
         {!loading && rightIcon}
       </Comp>

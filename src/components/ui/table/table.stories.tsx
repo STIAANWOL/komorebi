@@ -23,7 +23,11 @@ const statusVariant = (s: string) =>
   s === 'paid' ? 'success' : s === 'pending' ? 'warning' : 'destructive'
 
 const columns: Array<TableColumn<Invoice>> = [
-  { key: 'id', header: 'Invoice', render: (r) => <span className="font-mono text-xs">{r.id}</span> },
+  {
+    key: 'id',
+    header: 'Invoice',
+    render: (r) => <span className="font-mono text-xs">{r.id}</span>,
+  },
   {
     key: 'status',
     header: 'Status',
@@ -34,8 +38,17 @@ const columns: Array<TableColumn<Invoice>> = [
     ),
   },
   { key: 'method', header: 'Method' },
-  { key: 'date', header: 'Date', render: (r) => <span className="text-muted-foreground">{r.date}</span> },
-  { key: 'amount', header: 'Amount', align: 'right', render: (r) => <span className="font-medium">{r.amount}</span> },
+  {
+    key: 'date',
+    header: 'Date',
+    render: (r) => <span className="text-muted-foreground">{r.date}</span>,
+  },
+  {
+    key: 'amount',
+    header: 'Amount',
+    align: 'right',
+    render: (r) => <span className="font-medium">{r.amount}</span>,
+  },
 ]
 
 const meta = {
@@ -46,7 +59,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A prop-driven data table. Pass `columns` and `data`; cells default to `row[key]` or use a `render` function.',
+        component:
+          'A prop-driven data table. Pass `columns` and `data`; cells default to `row[key]` or use a `render` function.',
       },
     },
   },
@@ -73,12 +87,18 @@ export const Minimal: Story = {
     <Table
       className="w-96"
       columns={[
-        { key: 'name', header: 'Name', render: (r) => <span className="font-medium">{r.name}</span> },
+        {
+          key: 'name',
+          header: 'Name',
+          render: (r) => <span className="font-medium">{r.name}</span>,
+        },
         { key: 'role', header: 'Role' },
         {
           key: 'status',
           header: 'Status',
-          render: (r) => <Badge variant={r.status === 'Active' ? 'success' : 'warning'}>{r.status}</Badge>,
+          render: (r) => (
+            <Badge variant={r.status === 'Active' ? 'success' : 'warning'}>{r.status}</Badge>
+          ),
         },
       ]}
       data={[

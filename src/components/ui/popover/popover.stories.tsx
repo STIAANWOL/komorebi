@@ -13,7 +13,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A prop-driven popover. Pass a `trigger` element; the floating content is `children`.',
+        component:
+          'A prop-driven popover. Pass a `trigger` element; the floating content is `children`.',
       },
     },
   },

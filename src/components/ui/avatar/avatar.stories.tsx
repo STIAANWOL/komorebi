@@ -9,7 +9,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A prop-driven avatar. Pass `src`/`alt` and a `fallback` (shown while loading or on error).',
+        component:
+          'A prop-driven avatar. Pass `src`/`alt` and a `fallback` (shown while loading or on error).',
       },
     },
   },

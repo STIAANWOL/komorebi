@@ -20,32 +20,32 @@ const toggleVariants = cva(
       },
       size: {
         default: 'h-10 px-3',
-        sm:      'h-8 px-2.5 text-xs',
-        lg:      'h-12 px-5',
-        icon:    'h-10 w-10 p-0',
+        sm: 'h-8 px-2.5 text-xs',
+        lg: 'h-12 px-5',
+        icon: 'h-10 w-10 p-0',
       },
     },
     defaultVariants: {
       variant: 'default',
-      size:    'default',
+      size: 'default',
     },
   },
 )
 
 export interface ToggleProps
-  extends React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root>,
+  extends
+    React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root>,
     VariantProps<typeof toggleVariants> {}
 
-const Toggle = React.forwardRef<
-  React.ElementRef<typeof TogglePrimitive.Root>,
-  ToggleProps
->(({ className, variant, size, ...props }, ref) => (
-  <TogglePrimitive.Root
-    ref={ref}
-    className={cn(toggleVariants({ variant, size, className }))}
-    {...props}
-  />
-))
+const Toggle = React.forwardRef<React.ElementRef<typeof TogglePrimitive.Root>, ToggleProps>(
+  ({ className, variant, size, ...props }, ref) => (
+    <TogglePrimitive.Root
+      ref={ref}
+      className={cn(toggleVariants({ variant, size, className }))}
+      {...props}
+    />
+  ),
+)
 Toggle.displayName = TogglePrimitive.Root.displayName
 
 export { Toggle, toggleVariants }

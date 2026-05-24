@@ -43,9 +43,15 @@ export const TextEditorTools: Story = {
   parameters: { controls: { disable: true } },
   render: () => (
     <div className="flex gap-1 border rounded-md p-1">
-      <Toggle size="icon" aria-label="Bold"><Bold className="h-4 w-4" /></Toggle>
-      <Toggle size="icon" aria-label="Italic"><Italic className="h-4 w-4" /></Toggle>
-      <Toggle size="icon" aria-label="Underline" variant="outline"><Underline className="h-4 w-4" /></Toggle>
+      <Toggle size="icon" aria-label="Bold">
+        <Bold className="h-4 w-4" />
+      </Toggle>
+      <Toggle size="icon" aria-label="Italic">
+        <Italic className="h-4 w-4" />
+      </Toggle>
+      <Toggle size="icon" aria-label="Underline" variant="outline">
+        <Underline className="h-4 w-4" />
+      </Toggle>
     </div>
   ),
 }

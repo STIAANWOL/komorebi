@@ -10,7 +10,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A prop-driven toggle group. Pass `options` (each may carry an `icon`); set `type` to "single" or "multiple".',
+        component:
+          'A prop-driven toggle group. Pass `options` (each may carry an `icon`); set `type` to "single" or "multiple".',
       },
     },
   },

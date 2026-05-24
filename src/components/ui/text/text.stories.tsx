@@ -34,7 +34,9 @@ export const AllVariants: Story = {
       <Text variant="default">Default — primary body copy for readable content.</Text>
       <Text variant="muted">Muted — secondary supporting information.</Text>
       <Text variant="subtle">Subtle — metadata, timestamps, low-priority notes.</Text>
-      <Text variant="lead">Lead — introductory paragraph that sets context with a slightly larger size.</Text>
+      <Text variant="lead">
+        Lead — introductory paragraph that sets context with a slightly larger size.
+      </Text>
     </div>
   ),
 }
@@ -45,7 +47,9 @@ export const TypographicScale: Story = {
   render: () => (
     <div className="flex flex-col gap-3">
       {(['xs', 'sm', 'base', 'lg', 'xl'] as const).map((s) => (
-        <Text key={s} size={s}>{s} — Sunlight filtering through maple leaves.</Text>
+        <Text key={s} size={s}>
+          {s} — Sunlight filtering through maple leaves.
+        </Text>
       ))}
     </div>
   ),
@@ -58,10 +62,13 @@ export const InContext: Story = {
     <article className="max-w-lg flex flex-col gap-4">
       <Heading level={2}>Komorebi</Heading>
       <Text variant="lead">
-        A Japanese concept describing the interplay of light and leaves as sunlight filters through a forest canopy.
+        A Japanese concept describing the interplay of light and leaves as sunlight filters through
+        a forest canopy.
       </Text>
       <Text>
-        The word embodies a distinctly Japanese aesthetic sensibility — an appreciation for ephemeral beauty found in the natural world. It cannot be directly translated, which gives it a poetic weight that carries meaning beyond its definition.
+        The word embodies a distinctly Japanese aesthetic sensibility — an appreciation for
+        ephemeral beauty found in the natural world. It cannot be directly translated, which gives
+        it a poetic weight that carries meaning beyond its definition.
       </Text>
       <Text variant="muted" size="sm">
         Published May 2026 · 3 min read

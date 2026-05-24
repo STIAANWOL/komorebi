@@ -43,13 +43,18 @@ export const FilterList: Story = {
       <div className="flex flex-col gap-3 w-64">
         <SearchInput value={search} onChange={setSearch} placeholder="Filter colours…" />
         <ul className="flex flex-col gap-1">
-          {filtered.length > 0
-            ? filtered.map((item) => (
-                <li key={item} className="px-3 py-2 text-sm rounded-md hover:bg-accent transition-colors cursor-default">
-                  {item}
-                </li>
-              ))
-            : <li className="px-3 py-2 text-sm text-muted-foreground">No results</li>}
+          {filtered.length > 0 ? (
+            filtered.map((item) => (
+              <li
+                key={item}
+                className="px-3 py-2 text-sm rounded-md hover:bg-accent transition-colors cursor-default"
+              >
+                {item}
+              </li>
+            ))
+          ) : (
+            <li className="px-3 py-2 text-sm text-muted-foreground">No results</li>
+          )}
         </ul>
       </div>
     )

@@ -4,7 +4,12 @@ import { cn } from '@/lib/utils'
 import { buttonVariants } from '../button'
 
 const PaginationNav = ({ className, ...props }: React.ComponentProps<'nav'>) => (
-  <nav role="navigation" aria-label="pagination" className={cn('mx-auto flex w-full justify-center', className)} {...props} />
+  <nav
+    role="navigation"
+    aria-label="pagination"
+    className={cn('mx-auto flex w-full justify-center', className)}
+    {...props}
+  />
 )
 PaginationNav.displayName = 'PaginationNav'
 
@@ -41,7 +46,11 @@ PaginationLink.displayName = 'PaginationLink'
 
 function PaginationPrevious({ className, ...props }: React.ComponentProps<typeof PaginationLink>) {
   return (
-    <PaginationLink aria-label="Go to previous page" className={cn('w-auto gap-1 px-2.5', className)} {...props}>
+    <PaginationLink
+      aria-label="Go to previous page"
+      className={cn('w-auto gap-1 px-2.5', className)}
+      {...props}
+    >
       <ChevronLeft className="h-4 w-4" />
       <span>Prev</span>
     </PaginationLink>
@@ -51,7 +60,11 @@ PaginationPrevious.displayName = 'PaginationPrevious'
 
 function PaginationNext({ className, ...props }: React.ComponentProps<typeof PaginationLink>) {
   return (
-    <PaginationLink aria-label="Go to next page" className={cn('w-auto gap-1 px-2.5', className)} {...props}>
+    <PaginationLink
+      aria-label="Go to next page"
+      className={cn('w-auto gap-1 px-2.5', className)}
+      {...props}
+    >
       <span>Next</span>
       <ChevronRight className="h-4 w-4" />
     </PaginationLink>
@@ -61,7 +74,11 @@ PaginationNext.displayName = 'PaginationNext'
 
 function PaginationEllipsis({ className, ...props }: React.ComponentProps<'span'>) {
   return (
-    <span aria-hidden="true" className={cn('flex h-9 w-9 items-center justify-center', className)} {...props}>
+    <span
+      aria-hidden="true"
+      className={cn('flex h-9 w-9 items-center justify-center', className)}
+      {...props}
+    >
       <MoreHorizontal className="h-4 w-4" />
       <span className="sr-only">More pages</span>
     </span>

@@ -11,7 +11,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A prop-driven tooltip. Wrap the target as children and pass `content`. The provider is included internally.',
+        component:
+          'A prop-driven tooltip. Wrap the target as children and pass `content`. The provider is included internally.',
       },
     },
   },
@@ -35,19 +36,27 @@ export const Sides: Story = {
     <div className="grid grid-cols-3 gap-10 p-10">
       <div />
       <Tooltip side="top" content="Tooltip on top">
-        <Button size="sm" variant="outline">Top</Button>
+        <Button size="sm" variant="outline">
+          Top
+        </Button>
       </Tooltip>
       <div />
       <Tooltip side="left" content="Tooltip on left">
-        <Button size="sm" variant="outline">Left</Button>
+        <Button size="sm" variant="outline">
+          Left
+        </Button>
       </Tooltip>
       <div />
       <Tooltip side="right" content="Tooltip on right">
-        <Button size="sm" variant="outline">Right</Button>
+        <Button size="sm" variant="outline">
+          Right
+        </Button>
       </Tooltip>
       <div />
       <Tooltip side="bottom" content="Tooltip on bottom">
-        <Button size="sm" variant="outline">Bottom</Button>
+        <Button size="sm" variant="outline">
+          Bottom
+        </Button>
       </Tooltip>
       <div />
     </div>

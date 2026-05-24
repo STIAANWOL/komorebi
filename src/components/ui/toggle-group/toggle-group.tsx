@@ -19,9 +19,7 @@ const ToggleGroupRoot = React.forwardRef<
     className={cn('flex items-center justify-center gap-1', className)}
     {...props}
   >
-    <ToggleGroupContext.Provider value={{ variant, size }}>
-      {children}
-    </ToggleGroupContext.Provider>
+    <ToggleGroupContext.Provider value={{ variant, size }}>{children}</ToggleGroupContext.Provider>
   </ToggleGroupPrimitive.Root>
 ))
 ToggleGroupRoot.displayName = ToggleGroupPrimitive.Root.displayName
@@ -75,13 +73,7 @@ export type ToggleGroupProps = VariantProps<typeof toggleVariants> & {
       }
   )
 
-const ToggleGroup = ({
-  options,
-  className,
-  variant,
-  size,
-  ...rootProps
-}: ToggleGroupProps) => (
+const ToggleGroup = ({ options, className, variant, size, ...rootProps }: ToggleGroupProps) => (
   <ToggleGroupRoot
     variant={variant}
     size={size}
@@ -93,9 +85,7 @@ const ToggleGroup = ({
         key={opt.value}
         value={opt.value}
         disabled={opt.disabled}
-        aria-label={
-          opt.ariaLabel ?? (typeof opt.label === 'string' ? opt.label : undefined)
-        }
+        aria-label={opt.ariaLabel ?? (typeof opt.label === 'string' ? opt.label : undefined)}
       >
         {opt.icon}
         {opt.label}

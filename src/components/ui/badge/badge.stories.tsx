@@ -10,7 +10,17 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'secondary', 'destructive', 'outline', 'success', 'warning', 'info', 'sakura', 'fuji'],
+      options: [
+        'default',
+        'secondary',
+        'destructive',
+        'outline',
+        'success',
+        'warning',
+        'info',
+        'sakura',
+        'fuji',
+      ],
       table: { defaultValue: { summary: 'default' } },
     },
     children: { control: 'text' },

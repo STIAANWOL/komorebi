@@ -55,8 +55,14 @@ export const SettingsRow: Story = {
       <div className="w-80 flex flex-col gap-4">
         {(Object.entries(state) as [keyof typeof state, boolean][]).map(([key, val]) => (
           <div key={key} className="flex items-center justify-between">
-            <Label htmlFor={key} className="capitalize">{key} notifications</Label>
-            <Switch id={key} checked={val} onCheckedChange={(v) => setState((s) => ({ ...s, [key]: v }))} />
+            <Label htmlFor={key} className="capitalize">
+              {key} notifications
+            </Label>
+            <Switch
+              id={key}
+              checked={val}
+              onCheckedChange={(v) => setState((s) => ({ ...s, [key]: v }))}
+            />
           </div>
         ))}
       </div>

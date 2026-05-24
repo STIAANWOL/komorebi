@@ -25,12 +25,18 @@ function ConfirmExample({ variant }: { variant?: 'default' | 'destructive' }) {
 
   const handleConfirm = () => {
     setLoading(true)
-    setTimeout(() => { setLoading(false); setOpen(false) }, 1500)
+    setTimeout(() => {
+      setLoading(false)
+      setOpen(false)
+    }, 1500)
   }
 
   return (
     <>
-      <Button variant={variant === 'destructive' ? 'destructive' : 'outline'} onClick={() => setOpen(true)}>
+      <Button
+        variant={variant === 'destructive' ? 'destructive' : 'outline'}
+        onClick={() => setOpen(true)}
+      >
         {variant === 'destructive' ? 'Delete item' : 'Open Confirm Dialog'}
       </Button>
       <ConfirmDialog

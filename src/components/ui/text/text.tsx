@@ -6,23 +6,23 @@ import { cn } from '@/lib/utils'
 const textVariants = cva('font-sans', {
   variants: {
     size: {
-      xs:   'text-xs',
-      sm:   'text-sm',
+      xs: 'text-xs',
+      sm: 'text-sm',
       base: 'text-base',
-      lg:   'text-lg',
-      xl:   'text-xl',
+      lg: 'text-lg',
+      xl: 'text-xl',
     },
     variant: {
       default: 'text-foreground',
-      muted:   'text-muted-foreground',
-      subtle:  'text-muted-foreground/70',
-      lead:    'text-muted-foreground leading-relaxed',
+      muted: 'text-muted-foreground',
+      subtle: 'text-muted-foreground/70',
+      lead: 'text-muted-foreground leading-relaxed',
     },
     weight: {
-      normal:   'font-normal',
-      medium:   'font-medium',
+      normal: 'font-normal',
+      medium: 'font-medium',
       semibold: 'font-semibold',
-      bold:     'font-bold',
+      bold: 'font-bold',
     },
   },
   defaultVariants: {
@@ -33,8 +33,7 @@ const textVariants = cva('font-sans', {
 })
 
 export interface TextProps
-  extends React.HTMLAttributes<HTMLParagraphElement>,
-    VariantProps<typeof textVariants> {
+  extends React.HTMLAttributes<HTMLParagraphElement>, VariantProps<typeof textVariants> {
   asChild?: boolean
   as?: 'p' | 'span' | 'div' | 'label' | 'small'
 }

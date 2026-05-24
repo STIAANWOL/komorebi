@@ -93,7 +93,11 @@ const DropdownMenuLabel = React.forwardRef<
 >(({ className, inset, ...props }, ref) => (
   <DropdownMenuPrimitive.Label
     ref={ref}
-    className={cn('px-2 py-1.5 text-xs font-semibold text-muted-foreground', inset && 'pl-8', className)}
+    className={cn(
+      'px-2 py-1.5 text-xs font-semibold text-muted-foreground',
+      inset && 'pl-8',
+      className,
+    )}
     {...props}
   />
 ))
@@ -113,7 +117,11 @@ DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName
 
 function DropdownMenuShortcut({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>) {
   return (
-    <span aria-hidden="true" className={cn('ml-auto text-xs tracking-widest opacity-60', className)} {...props} />
+    <span
+      aria-hidden="true"
+      className={cn('ml-auto text-xs tracking-widest opacity-60', className)}
+      {...props}
+    />
   )
 }
 DropdownMenuShortcut.displayName = 'DropdownMenuShortcut'
@@ -196,9 +204,7 @@ const renderMenuItems = (items: MenuItem[]): React.ReactNode =>
           <DropdownMenuItem key={i} disabled={item.disabled} onSelect={item.onSelect}>
             <MenuIcon>{item.icon}</MenuIcon>
             {item.label}
-            {item.shortcut ? (
-              <DropdownMenuShortcut>{item.shortcut}</DropdownMenuShortcut>
-            ) : null}
+            {item.shortcut ? <DropdownMenuShortcut>{item.shortcut}</DropdownMenuShortcut> : null}
           </DropdownMenuItem>
         )
     }
