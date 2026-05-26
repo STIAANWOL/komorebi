@@ -137,6 +137,32 @@ export const WithRightIcon: Story = {
   },
 }
 
+export const AsChild: Story = {
+  name: 'As Link (asChild)',
+  parameters: {
+    controls: { disable: true },
+    docs: {
+      description: {
+        story:
+          'With `asChild`, Button renders its child as the root element — e.g. an anchor — applying button styles while preserving link semantics (real `<a href>`, right/middle/⌘-click, framework prefetch).',
+      },
+    },
+  },
+  render: () => (
+    <div className="flex flex-wrap gap-3 items-center">
+      <Button asChild variant="outline">
+        <a href="#pricing">Pricing</a>
+      </Button>
+      <Button asChild>
+        <a href="#start">
+          Get Started
+          <ArrowRight className="h-4 w-4" />
+        </a>
+      </Button>
+    </div>
+  ),
+}
+
 export const WithBothIcons: Story = {
   name: 'With Both Icons',
   args: {
