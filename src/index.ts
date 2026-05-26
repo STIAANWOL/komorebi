@@ -96,6 +96,9 @@ export { Accordion } from '@/components/ui/accordion'
 export type { AccordionProps, AccordionItemData } from '@/components/ui/accordion'
 
 // Navigation
+export { Link } from '@/components/ui/link'
+export type { LinkProps } from '@/components/ui/link'
+
 export { Breadcrumb } from '@/components/ui/breadcrumb'
 export type { BreadcrumbProps, BreadcrumbEntry } from '@/components/ui/breadcrumb'
 

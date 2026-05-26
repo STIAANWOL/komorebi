@@ -136,6 +136,7 @@ import { Dialog, Button } from '@stiaan/komorebi'
 ### Navigation
 | Component | Description |
 |---|---|
+| `Link` | Styled anchor — auto external `target`/`rel` + ↗ icon |
 | `Breadcrumb` | Breadcrumb trail — pass `items` |
 | `Pagination` | Page navigation — pass `page` and `pageCount` |
 
