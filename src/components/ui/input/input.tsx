@@ -5,11 +5,17 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   leftIcon?: React.ReactNode
   rightIcon?: React.ReactNode
   error?: boolean
+  errorText?: string
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, leftIcon, rightIcon, error, ...props }, ref) => {
-    return (
+  ({ className, type, leftIcon, rightIcon, error, errorText, ...props }, ref) => {
+    const errorId = React.useId()
+    const describedBy = errorText
+      ? [props['aria-describedby'], errorId].filter(Boolean).join(' ')
+      : props['aria-describedby']
+
+    const field = (
       <div className="relative flex items-center">
         {leftIcon && (
           <span className="absolute left-3 flex items-center text-muted-foreground pointer-events-none">
@@ -19,6 +25,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           type={type}
           ref={ref}
+          aria-invalid={errorText ? true : props['aria-invalid']}
+          aria-describedby={describedBy}
           className={cn(
             'flex h-10 w-full rounded-md border bg-background px-3 py-2',
             'font-sans text-sm text-foreground',
@@ -40,6 +48,17 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             {rightIcon}
           </span>
         )}
+      </div>
+    )
+
+    if (!errorText) return field
+
+    return (
+      <div className="flex flex-col gap-1.5">
+        {field}
+        <p id={errorId} className="font-sans text-xs leading-tight text-destructive">
+          {errorText}
+        </p>
       </div>
     )
   },

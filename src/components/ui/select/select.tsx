@@ -156,6 +156,10 @@ export interface SelectProps {
   defaultValue?: string
   onValueChange?: (value: string) => void
   disabled?: boolean
+  /** Renders the trigger with the destructive border. */
+  error?: boolean
+  /** Message rendered below the trigger in destructive color. */
+  errorText?: string
   /** Classes applied to the trigger (e.g. width: `w-56`). */
   className?: string
 }
@@ -170,40 +174,61 @@ const Select = ({
   defaultValue,
   onValueChange,
   disabled,
+  error,
+  errorText,
   className,
-}: SelectProps) => (
-  <SelectPrimitive.Root
-    value={value}
-    defaultValue={defaultValue}
-    onValueChange={onValueChange}
-    disabled={disabled}
-  >
-    <SelectTrigger className={className}>
-      <SelectValue placeholder={placeholder} />
-    </SelectTrigger>
-    <SelectContent>
-      {options.map((opt, i) =>
-        isGroup(opt) ? (
-          <React.Fragment key={opt.group}>
-            {i > 0 && <SelectSeparator />}
-            <SelectGroup>
-              <SelectLabel>{opt.group}</SelectLabel>
-              {opt.items.map((item) => (
-                <SelectItem key={item.value} value={item.value} disabled={item.disabled}>
-                  {item.label}
-                </SelectItem>
-              ))}
-            </SelectGroup>
-          </React.Fragment>
-        ) : (
-          <SelectItem key={opt.value} value={opt.value} disabled={opt.disabled}>
-            {opt.label}
-          </SelectItem>
-        ),
-      )}
-    </SelectContent>
-  </SelectPrimitive.Root>
-)
+}: SelectProps) => {
+  const errorId = React.useId()
+  const root = (
+    <SelectPrimitive.Root
+      value={value}
+      defaultValue={defaultValue}
+      onValueChange={onValueChange}
+      disabled={disabled}
+    >
+      <SelectTrigger
+        className={className}
+        error={error}
+        aria-invalid={errorText ? true : undefined}
+        aria-describedby={errorText ? errorId : undefined}
+      >
+        <SelectValue placeholder={placeholder} />
+      </SelectTrigger>
+      <SelectContent>
+        {options.map((opt, i) =>
+          isGroup(opt) ? (
+            <React.Fragment key={opt.group}>
+              {i > 0 && <SelectSeparator />}
+              <SelectGroup>
+                <SelectLabel>{opt.group}</SelectLabel>
+                {opt.items.map((item) => (
+                  <SelectItem key={item.value} value={item.value} disabled={item.disabled}>
+                    {item.label}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+            </React.Fragment>
+          ) : (
+            <SelectItem key={opt.value} value={opt.value} disabled={opt.disabled}>
+              {opt.label}
+            </SelectItem>
+          ),
+        )}
+      </SelectContent>
+    </SelectPrimitive.Root>
+  )
+
+  if (!errorText) return root
+
+  return (
+    <div className="flex flex-col gap-1.5">
+      {root}
+      <p id={errorId} className="font-sans text-xs leading-tight text-destructive">
+        {errorText}
+      </p>
+    </div>
+  )
+}
 Select.displayName = 'Select'
 
 export { Select }

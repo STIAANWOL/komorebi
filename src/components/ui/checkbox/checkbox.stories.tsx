@@ -12,6 +12,9 @@ const meta = {
     disabled: { control: 'boolean' },
     indeterminate: { control: 'boolean', description: 'Shows a dash instead of a tick.' },
     checked: { control: 'boolean' },
+    error: { control: 'boolean' },
+    errorText: { control: 'text' },
+    label: { control: 'text' },
   },
   args: {
     disabled: false,
@@ -39,6 +42,20 @@ export const Disabled: Story = {
 export const DisabledChecked: Story = {
   name: 'Disabled + Checked',
   args: { disabled: true, checked: true },
+}
+
+export const WithLabelProp: Story = {
+  name: 'With Label Prop',
+  args: { label: 'Accept terms and conditions' },
+}
+
+export const WithErrorText: Story = {
+  name: 'With Error Text',
+  args: {
+    label: 'Accept terms and conditions',
+    error: true,
+    errorText: 'You must accept the terms to continue.',
+  },
 }
 
 export const WithLabel: Story = {

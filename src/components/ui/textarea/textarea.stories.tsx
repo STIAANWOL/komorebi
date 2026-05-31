@@ -10,6 +10,7 @@ const meta = {
     placeholder: { control: 'text' },
     disabled: { control: 'boolean' },
     error: { control: 'boolean' },
+    errorText: { control: 'text' },
     rows: { control: { type: 'number', min: 2, max: 20 } },
   },
   args: {
@@ -32,6 +33,15 @@ export const WithValue: Story = {
 export const ErrorState: Story = {
   name: 'Error State',
   args: { error: true, defaultValue: 'Invalid content here' },
+}
+
+export const WithErrorText: Story = {
+  name: 'With Error Text',
+  args: {
+    error: true,
+    errorText: 'Please keep your reply under 500 characters.',
+    defaultValue: 'Way too much content here, exceeding the limit…',
+  },
 }
 
 export const Disabled: Story = {

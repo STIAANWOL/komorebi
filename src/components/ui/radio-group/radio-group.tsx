@@ -14,16 +14,19 @@ RadioGroupRoot.displayName = RadioGroupPrimitive.Root.displayName
 
 const RadioGroupItem = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
->(({ className, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item> & { error?: boolean }
+>(({ className, error, ...props }, ref) => (
   <RadioGroupPrimitive.Item
     ref={ref}
     className={cn(
-      'aspect-square h-4 w-4 cursor-pointer rounded-full border border-input',
+      'aspect-square h-4 w-4 cursor-pointer rounded-full border',
       'ring-offset-background transition-colors duration-150',
       'focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
       'disabled:cursor-not-allowed disabled:opacity-50',
       'data-[state=checked]:border-primary data-[state=checked]:bg-primary',
+      error
+        ? 'border-destructive focus-visible:ring-destructive/50'
+        : 'border-input',
       className,
     )}
     {...props}
@@ -44,18 +47,25 @@ export interface RadioGroupProps {
   disabled?: boolean
   name?: string
   className?: string
+  error?: boolean
+  errorText?: string
 }
 
 const RadioGroup = ({
   options,
   orientation = 'vertical',
   className,
+  error,
+  errorText,
   ...props
 }: RadioGroupProps) => {
   const groupId = React.useId()
-  return (
+  const errorId = React.useId()
+  const root = (
     <RadioGroupRoot
       orientation={orientation}
+      aria-invalid={errorText ? true : undefined}
+      aria-describedby={errorText ? errorId : undefined}
       className={cn(
         orientation === 'horizontal' ? 'flex flex-wrap gap-4' : 'grid gap-2',
         className,
@@ -66,7 +76,7 @@ const RadioGroup = ({
         const itemId = `${groupId}-${opt.value}`
         return (
           <div key={opt.value} className="flex items-center gap-2">
-            <RadioGroupItem id={itemId} value={opt.value} disabled={opt.disabled} />
+            <RadioGroupItem id={itemId} value={opt.value} disabled={opt.disabled} error={error} />
             <label
               htmlFor={itemId}
               className={cn(
@@ -80,6 +90,17 @@ const RadioGroup = ({
         )
       })}
     </RadioGroupRoot>
+  )
+
+  if (!errorText) return root
+
+  return (
+    <div className="flex flex-col gap-1.5">
+      {root}
+      <p id={errorId} className="font-sans text-xs leading-tight text-destructive">
+        {errorText}
+      </p>
+    </div>
   )
 }
 RadioGroup.displayName = 'RadioGroup'

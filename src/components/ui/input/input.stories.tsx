@@ -19,6 +19,7 @@ const meta = {
     placeholder: { control: 'text' },
     disabled: { control: 'boolean' },
     error: { control: 'boolean', description: 'Renders the error border and ring.' },
+    errorText: { control: 'text', description: 'Message rendered below the input in destructive color.' },
     type: {
       control: 'select',
       options: ['text', 'email', 'password', 'number', 'search', 'url', 'tel'],
@@ -58,6 +59,17 @@ export const ErrorState: Story = {
   name: 'Error State',
   args: {
     error: true,
+    defaultValue: 'bad-email',
+    placeholder: 'you@example.com',
+    type: 'email',
+  },
+}
+
+export const WithErrorText: Story = {
+  name: 'With Error Text',
+  args: {
+    error: true,
+    errorText: 'Please enter a valid email address.',
     defaultValue: 'bad-email',
     placeholder: 'you@example.com',
     type: 'email',

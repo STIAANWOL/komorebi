@@ -69,6 +69,17 @@ export const Disabled: Story = {
   args: { options: colours, placeholder: 'Select a colour…', disabled: true, className: 'w-56' },
 }
 
+export const WithErrorText: Story = {
+  name: 'With Error Text',
+  args: {
+    options: colours,
+    placeholder: 'Select a colour…',
+    className: 'w-56',
+    error: true,
+    errorText: 'Please pick a colour.',
+  },
+}
+
 export const WithDisabledItem: Story = {
   name: 'With Disabled Item',
   args: {

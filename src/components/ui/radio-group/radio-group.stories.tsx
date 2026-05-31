@@ -33,6 +33,15 @@ export const Horizontal: Story = {
   args: { options: plans, defaultValue: 'free', orientation: 'horizontal' },
 }
 
+export const WithErrorText: Story = {
+  name: 'With Error Text',
+  args: {
+    options: plans,
+    error: true,
+    errorText: 'Please pick a plan.',
+  },
+}
+
 export const WithDisabledItem: Story = {
   name: 'With Disabled Item',
   args: {
