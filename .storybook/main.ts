@@ -24,6 +24,12 @@ const config: StorybookConfig = {
       propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
     },
   },
+  viteFinal: async (viteConfig) => {
+    if (process.env.STORYBOOK_BASE_PATH) {
+      viteConfig.base = process.env.STORYBOOK_BASE_PATH
+    }
+    return viteConfig
+  },
 }
 
 export default config

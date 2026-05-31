@@ -1,6 +1,6 @@
 {
   "name": "@stiaan/komorebi",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Komorebi — a Japanese-inspired pastel component library.",
   "keywords": [
     "component-library",
@@ -13,7 +13,7 @@
     "tailwindcss",
     "ui"
   ],
-  "homepage": "https://github.com/STIAANWOL/komorebi#readme",
+  "homepage": "https://stiaanwol.github.io/komorebi/",
   "bugs": {
     "url": "https://github.com/STIAANWOL/komorebi/issues"
   },
